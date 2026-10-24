@@ -21,11 +21,13 @@ form.addEventListener("submit",function(e){
         isformvalid=isusenamevlid && isemailvalid && ispasswordvalid && ismatching
     }
     if(isformvalid){
-        alert("you have registered successfully")
         [username,email,password,confirm_password].forEach((input) => {
             let groupform=input.parentElement
-            groupform.className="form-group"
+            groupform.className="form-group success"
         })
+        
+        alert("you have registered successfully")
+        setTimeout(() => {location.reload()},2000)
     }
     
 })
@@ -42,7 +44,7 @@ function check(Array){
 
         else{
             showsuccess(input)
-            isvalid= true
+            
         }
     })
     return isvalid
